@@ -1,0 +1,12 @@
+{
+    "gui.charmofundying.config.xOffset.name": "Yatay gösterme ofseti",
+    "gui.charmofundying.config.xOffset.description": "Oyuncunun totemi için yatay gösterme ofseti.",
+    "gui.charmofundying.config.yOffset.name": "Dikey gösterme ofseti",
+    "gui.charmofundying.config.yOffset.description": "Oyuncunun totemi için dikey gösterme ofseti.",
+    "gui.charmofundying.config.zOffset.name": "Z-Ekseni gösterme ofseti",
+    "gui.charmofundying.config.zOffset.description": "Oyuncunun totemi için z-ekseni gösterme ofseti.",
+    "gui.charmofundying.config.renderTotem.name": "Kuşanılan totemi göster",
+    "gui.charmofundying.config.renderTotem.description": "Etkinleştirildiğinde oyuncularda kuşanılan totemleri gösterir.",
+    "trinkets.slot.charm.charm": "Takı",
+    "charmofundying.networking.failed": "Charm of Undying Ağ Hatası"
+  }
