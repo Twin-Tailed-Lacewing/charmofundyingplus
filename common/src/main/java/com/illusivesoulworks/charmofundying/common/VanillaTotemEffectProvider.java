@@ -18,13 +18,38 @@
 
 package com.illusivesoulworks.charmofundying.common;
 
+import com.illusivesoulworks.charmofundying.CharmOfUndyingConstants;
+import com.illusivesoulworks.charmofundying.platform.Services;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.Enchantments;
 
 public class VanillaTotemEffectProvider implements ITotemEffectProvider {
+
+  @Override
+  public void modifyStack(HolderLookup.Provider lookup, ItemStack stack) {
+
+    if (Services.PLATFORM.isModLoaded("mr_infinite_totem")) {
+      int infinity = 0;
+
+      try {
+        infinity = stack.getEnchantments().getLevel(
+            lookup.lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(Enchantments.INFINITY));
+      } catch (Exception e) {
+        CharmOfUndyingConstants.LOG.error("Could not find enchantment registry");
+      }
+
+      if (infinity > 0) {
+        return;
+      }
+    }
+    stack.shrink(1);
+  }
 
   @Override
   public boolean applyEffects(LivingEntity livingEntity, DamageSource damageSource,

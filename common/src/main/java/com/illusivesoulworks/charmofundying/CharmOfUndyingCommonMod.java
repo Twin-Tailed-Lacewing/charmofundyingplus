@@ -58,7 +58,7 @@ public class CharmOfUndyingCommonMod {
 
     if (!stack.isEmpty()) {
       ItemStack copy = stack.copy();
-      effectProvider.modifyStack(stack);
+      effectProvider.modifyStack(livingEntity.registryAccess(), stack);
 
       if (livingEntity instanceof ServerPlayer player) {
         player.awardStat(Stats.ITEM_USED.get(copy.getItem()), 1);

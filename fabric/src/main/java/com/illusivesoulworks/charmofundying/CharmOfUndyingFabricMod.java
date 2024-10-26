@@ -29,6 +29,7 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.registry.RegistryEntryAddedCallback;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -51,7 +52,7 @@ public class CharmOfUndyingFabricMod implements ModInitializer {
           new VanillaTotemEffectProvider() {
 
             @Override
-            public void modifyStack(ItemStack stack) {
+            public void modifyStack(HolderLookup.Provider lookup, ItemStack stack) {
               stack.setDamageValue(stack.getDamageValue() + 1);
 
               if (stack.getDamageValue() >= stack.getMaxDamage()) {
