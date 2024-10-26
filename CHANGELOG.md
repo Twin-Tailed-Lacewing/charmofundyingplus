@@ -7,6 +7,7 @@ Prior to version 6.0.0, this project used MCVERSION-MAJORMOD.MAJORAPI.MINOR.PATC
 ## [9.1.0+1.21.1] - 2024.10.25
 ### Added
 - Added compatibility with Totem of Infinity [#41](https://github.com/illusivesoulworks/charmofundying/issues/41)
+- Added `tr_tr` localization [#43](https://github.com/illusivesoulworks/charmofundying/pull/43)
 ### Changed
 - Updated to Minecraft 1.21.1
 
