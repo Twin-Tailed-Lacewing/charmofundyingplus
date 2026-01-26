@@ -67,6 +67,11 @@ public class CharmOfUndyingCommonMod {
 
       if (effectProvider.applyEffects(livingEntity, damageSource, copy)) {
         Services.PLATFORM.broadcastTotemEvent(livingEntity);
+
+  			ItemStack _setstack = new ItemStack(TotemReuseModItems.HOLLOW_TOTEM.get()).copy();
+	  		_setstack.setCount(1);
+	  		ItemHandlerHelper.giveItemToPlayer(livingEntity, _setstack);
+        
         return true;
       }
     }
